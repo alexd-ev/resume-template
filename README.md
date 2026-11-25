@@ -17,12 +17,12 @@ pdflatex alexds-resume-template.tex
 ## Project Structure
 ```
 resume-template/
-├── resume-template-referees.bib            - BibTeX bibliography document
-├── resume-template.tex                     - LaTeX text document
-├── resume-template.pdf                     - Generated PDF file
 ├── .gitignore                              - Ignore LaTeX metadata files
 ├── LICENSE                                 - GPL-3.0 licence
-└── README.md                               - Documentation
+├── README.md                               - Documentation
+├── resume-template-referees.bib            - BibTeX bibliography document
+├── resume-template.pdf                     - Generated PDF file
+└── resume-template.tex                     - LaTeX text document
 ```
 
 # Author
