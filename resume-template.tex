@@ -1,0 +1,170 @@
+%-------------------------------------------------------------------------------
+% LaTeX Resume Template
+%
+% A single-page resume template. Edit the placeholder text below (First Name
+% Last Name, email, phone number, and so on) to make it your own.
+%
+% Build with:
+%   pdflatex resume-template.tex
+%
+% The optional referee bibliography (resume-template-referees.bib) needs Biber,
+% so use latexmk if you print it:
+%   latexmk -pdf resume-template.tex      (runs biber automatically)
+%-------------------------------------------------------------------------------
+\documentclass[11pt,a4paper]{article}
+
+%-------------------------------------------------------------------------------
+% Packages
+%-------------------------------------------------------------------------------
+\usepackage{times}                                              % Times New Roman style font
+\usepackage[table,xcdraw]{xcolor}                               % colour support
+\usepackage{grffile,graphicx,hyperref,graphbox}                 % graphics and hyperlinks
+\usepackage{fancyhdr}                                           % page styles
+\usepackage{array}                                              % table columns
+\usepackage[top=1in,bottom=1in,left=1in,right=1in]{geometry}
+\usepackage{sectsty}                                            % section heading styling
+\usepackage{enumitem}                                           % compact, customisable lists
+\usepackage[normalem]{ulem}                                     % underlined hyperlinks
+\usepackage[font=footnotesize]{caption}
+\usepackage[
+    backend=biber,
+    style=numeric,
+]{biblatex}
+\addbibresource{resume-template-referees.bib}
+
+%-------------------------------------------------------------------------------
+% Colours and page setup
+%-------------------------------------------------------------------------------
+\definecolor{linkblue}{HTML}{1155CC}            % hyperlink blue
+\definecolor{rulegray}{HTML}{888888}            % horizontal rule grey
+
+\pagestyle{empty}                                 % no page numbers on a resume
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\linespread{1.115}                                % generous, readable line spacing
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=linkblue,
+    linkcolor=linkblue,
+    pdfauthor={First Name Last Name},
+    pdftitle={First Name Last Name - Resume},
+}
+
+%-------------------------------------------------------------------------------
+% Resume layout helpers
+%-------------------------------------------------------------------------------
+% A full-width rule separating the header and each resume section.
+\newcommand{\resumerule}{%
+    \par\noindent\hspace*{3pt}%
+    \textcolor{rulegray}{\rule{\dimexpr\textwidth-3pt\relax}{1pt}}\par
+}
+
+% A resume section: a rule, then a bold underlined heading.
+\newcommand{\resumesection}[1]{%
+    \par\vspace{-1.7pt}%
+    \resumerule
+    \vspace{0.5pt}%
+    \noindent\textbf{\underline{#1}}\par
+}
+
+\newlist{resumelist}{itemize}{1}
+\setlist[resumelist]{
+    label=$\bullet$,
+    leftmargin=36pt,
+    labelwidth=10pt,
+    labelsep=13pt,
+    topsep=0pt,
+    itemsep=0pt,
+    parsep=0pt,
+    partopsep=0pt,
+}
+
+%-------------------------------------------------------------------------------
+% Document
+%-------------------------------------------------------------------------------
+\begin{document}
+
+%--------------------------------------- Header --------------------------------
+\vspace*{-10.8pt}
+{\centering\bfseries\itshape First Name Last Name\par}
+
+\vspace{-1.9pt}
+\resumerule
+\vspace{1.3pt}
+
+{\centering
+    \href{mailto:email@example.com}{\itshape\underline{email}}
+    \textbullet{} \itshape phone number\\[-0.62pt]
+    LinkedIn: \href{https://www.linkedin.com/in/username}{\itshape\underline{in/username}};
+    GitHub: \href{https://github.com/username}{\itshape\underline{username}};\\[-0.62pt]
+    Personal Website: \href{https://website.com}{\itshape\underline{website}}\par
+}
+
+%--------------------------------------- Experience ----------------------------
+\resumesection{Experience}
+
+\noindent\textbf{\textit{Company}}\hfill\textit{City, State}\par
+\noindent\textbf{\textit{Role}}\hfill\textit{Start Month Year - End Month Year}\par
+
+\begin{resumelist}
+    \item \textellipsis
+\end{resumelist}
+
+Relevant Projects:
+\begin{resumelist}
+    \item \textellipsis
+\end{resumelist}
+
+\textellipsis
+
+%--------------------------------------- Education -----------------------------
+\resumesection{Education}
+
+\noindent\textbf{Institution}\hfill\textit{City, State}\par
+\noindent\textit{Degree. Grade.}\hfill\textit{Start Month Year - End Month Year}\par
+
+Relevant Coursework:
+\begin{resumelist}
+    \item \textellipsis
+\end{resumelist}
+
+Club participant:
+\begin{resumelist}
+    \item \textellipsis
+\end{resumelist}
+
+\textellipsis
+
+\vspace{2pt}
+
+%--------------------------------------- Technical Skills ----------------------
+\resumesection{Technical Skills}
+
+\textbf{Languages:} Java, C/C++, Python, HTML, CSS, SQL, planning, logical/functional and more.\par
+\textbf{Frameworks and build systems:} Javalin/Spring boot, React, Maven, Make/CMake and more.\par
+\textbf{Core skills:} AWS, Docker, Git.\par
+\vspace{1pt}
+\textbf{Operating Systems:} Windows, macOS, and Linux.\par
+\vspace{1pt}
+\textbf{Personal projects:}
+\begin{resumelist}
+    \item \textellipsis
+\end{resumelist}
+
+\vspace{2.5pt}
+
+%--------------------------------------- Certifications ------------------------
+\resumesection{Certifications}
+
+\begin{resumelist}
+    \item \textellipsis
+\end{resumelist}
+
+%--------------------------------------- Referees ------------------------------
+\resumesection{Referees}
+
+\nocite{*}
+\printbibliography[heading=none]
+
+\end{document}
