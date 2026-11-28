@@ -13,6 +13,7 @@ To remove the optional referees, comment out lines `alexds-resume-template.tex:1
 ```bash
 pdflatex alexds-resume-template.tex
 ```
+Open the PDF file: `alexds-resume-template.pdf`
 
 ## Project Structure
 ```
